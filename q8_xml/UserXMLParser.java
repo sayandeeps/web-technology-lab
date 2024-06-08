@@ -25,8 +25,8 @@ public class UserXMLParser {
                     System.out.println("Location: " + userElement.getElementsByTagName("location").item(0).getTextContent());
                     break;
                 }else{
-                          System.out.println("No records found !!");
-                          break;
+                    System.out.println("No records found !!");
+                    break;
                 }
             }
         }
