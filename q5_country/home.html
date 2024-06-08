@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Countries and Capitals</title>
+  <style>
+   .capital {
+      color: blue; 
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Countries and Capitals</h1>
+  <select id="countrySelect" onchange="showCapital()">
+    <option value="">Select a country</option>
+    <option value="USA">United States</option>
+    <option value="Canada">Canada</option>
+    <option value="Mexico">Mexico</option>
+    <option value="France">France</option>
+    <option value="Germany">Germany</option>
+  </select>
+  <p id="capital"></p>
+
+  <script>
+    function showCapital() {
+      const countrySelect = document.getElementById("countrySelect");
+      const capitalElement = document.getElementById("capital");
+      const country = countrySelect.value;
+      let capital = "";
+
+      switch (country) {
+        case "USA":
+          capital = "Washington D.C.";
+          break;
+        case "Canada":
+          capital = "Ottawa";
+          break;
+        case "Mexico":
+          capital = "Mexico City";
+          break;
+        case "France":
+          capital = "Paris";
+          break;
+        case "Germany":
+          capital = "Berlin";
+          break;
+        default:
+          capital = "";
+      }
+
+      capitalElement.innerHTML = `<span class="capital">${capital}</span>`;
+    }
+  </script>
+</body>
+</html>

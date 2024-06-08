@@ -1,0 +1,55 @@
+
+<html>
+<head>
+  <title>Number to Words</title>
+  <style>
+    #output {
+      font-size: 24px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Number to Words</h1>
+  <input type="text" id="input-field" maxlength="3">
+  <button onclick="convertToWords()">Convert</button>
+  <p id="output"></p>
+
+  <script>
+    function convertToWords() {
+      const inputField = document.getElementById("input-field");
+      let inputValue = inputField.value;
+      const outputElement = document.getElementById("output");
+
+      if (!/^\d+$/.test(inputValue) || inputValue.length > 3) {
+        outputElement.innerHTML = "Invalid input. Please enter a number between 0 and 999.";
+        return;
+      }
+
+      const digit = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+      const tens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+      const unit = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+      let output = "";
+
+      if (inputValue.length === 3) {
+        output += digit[parseInt(inputValue[0])] + " Hundred";
+        inputValue = inputValue.substring(1);
+      }
+
+      if (inputValue.length === 2) {
+        if (inputValue[0] === "1") {
+          output += " " + tens[parseInt(inputValue[1])];
+        } else {
+          output += " " + unit[parseInt(inputValue[0])] + (inputValue[1]!== "0"? " " + digit[parseInt(inputValue[1])] : "");
+        }
+      } else {
+        output += " " + digit[parseInt(inputValue)];
+      }
+
+      outputElement.innerHTML = output;
+    }
+  </script>
+</body>
+</html>
