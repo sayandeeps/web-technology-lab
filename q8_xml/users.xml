@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user id="1">
+        <name>Shreyash</name>
+        <email>shreyash@xyz.com</email>
+        <location>Asansol</location>
+    </user>
+    <user id="2">
+        <name>Aman</name>
+        <email>Aman@xyz.com</email>
+        <location>Bihar</location>
+    </user>
+    <!-- ... -->
+    <user id="10">
+        <name>Sahil</name>
+        <email>Sahil@xyz.com</email>
+        <location>Kolkata</location>
+    </user>
+</users>
